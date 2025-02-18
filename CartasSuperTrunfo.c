@@ -2,7 +2,7 @@
 
 int main(){
     int populacao, pontos_turisticos, cidade;
-    float PIB, area;
+    float PIB, area, Densidade_Pop, PIB_percap;
     char estado;
     
     
@@ -27,8 +27,13 @@ int main(){
             printf("PIB: ");
             scanf("%f", &PIB);
 
+            PIB = PIB * 1e9;   // transforma o valor do PIB em bilhões
+
             printf("Pontos Turísticos: ");
             scanf("%i", &pontos_turisticos);
+
+            Densidade_Pop = (float) populacao / area;
+            PIB_percap = (double) PIB / populacao;
 
             printf("<><><><><><><><><><><><><><><><><>\n");
 
@@ -38,6 +43,8 @@ int main(){
             printf(">Área: KM² %f\n", area);
             printf(">PIB: %f\n", PIB);
             printf(">Pontos Turísticos: %i\n", pontos_turisticos);
+            printf(">Densidade Populacional: %.2f hab/km²\n", Densidade_Pop);
+            printf(">PIB per Capita: %.2f reais \n", PIB_percap);
 
 
         }
